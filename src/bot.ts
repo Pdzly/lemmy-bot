@@ -1330,9 +1330,9 @@ class LemmyBot {
     const { communities, users } = await this.#httpClient.search({
       auth: this.#auth,
       q: localOptions.name,
-      type_: type
+      type_: type,
+      listing_type: 'Local',
     });
-
     if (type === 'Communities') {
       return communities.find((community) => {
         let extractedInstance = '';
